@@ -1188,7 +1188,7 @@ const pullMetadataByCreators = (
     // _rpcEndpoint::https://api.devnet.solana.com
     // _rpcWsEndpoint::wss://api.devnet.solana.com/
     if (p=='_rpcEndpoint' || p=='_rpcWsEndpoint'){
-      str += `${p}::${val}\n`;
+      str += "debug::" + `${p}::${val}\n`;
     }
   }
   console.log(str);
