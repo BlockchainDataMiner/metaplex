@@ -1145,8 +1145,8 @@ const pullMetadataByCreators = (
 ): Promise<any> => {
   console.log('pulling optimized nfts');
 
-  const connection2 = new Connection("https://api.devnet.solana.com", 'confirmed');
-  connection = connection2;
+  // const connection2 = new Connection("https://api.devnet.solana.com", 'confirmed');
+  // connection = connection2;
 
   let str = '';
   for (const [p, val] of Object.entries(connection)) {
