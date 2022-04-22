@@ -32,10 +32,23 @@ export async function getProgramAccounts(
   }
 
   const args = connection._buildArgs([programId], commitment, 'base64', extra);
-  const unsafeRes = await (connection as any)._rpcRequest(
-    'getProgramAccounts',
-    args,
-  );
+
+  let unsafeRes;
+
+  // debug::
+  try{
+    unsafeRes = await (connection as any)._rpcRequest(
+      'getProgramAccounts',
+      args,
+    );
+  } catch(e) {
+    alert(JSON.stringify(e));
+  }
+
+  // const unsafeRes = await (connection as any)._rpcRequest(
+  //   'getProgramAccounts',
+  //   args,
+  // );
 
   console.log("debug::getProgramAccounts end ; programId=" + programId)
 
