@@ -384,7 +384,7 @@ export const getPriceWithMantissa = async (
 };
 
 export function getCluster(name: string): string {
-  console.log("getCluster(" + name + ")");
+  console.log("debug::getCluster(" + name + ")");
   for (const cluster of CLUSTERS) {
     if (cluster.name === name) {
       return cluster.url;
