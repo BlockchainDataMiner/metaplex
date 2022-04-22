@@ -33,7 +33,10 @@ export const processMetaplexAccounts: ProcessAccountsFunc = async (
   { account, pubkey },
   setter,
 ) => {
+
   if (!isMetaplexAccount(account)) return;
+
+  console.log("debug::processMetaplexAccounts start : " + pubkey);
 
   try {
     const STORE_ID = programIds().store;
