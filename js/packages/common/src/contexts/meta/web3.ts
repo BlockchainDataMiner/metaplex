@@ -8,7 +8,7 @@ export async function getProgramAccounts(
   configOrCommitment?: any,
 ): Promise<Array<AccountAndPubkey>> {
 
-  console.log("debug::getProgramAccounts start")
+  console.log("debug::getProgramAccounts start ; programId=" + programId)
 
   const extra: any = {};
   let commitment;
@@ -37,7 +37,7 @@ export async function getProgramAccounts(
     args,
   );
 
-  console.log("debug::getProgramAccounts end")
+  console.log("debug::getProgramAccounts end ; programId=" + programId)
 
   return unsafeResAccounts(unsafeRes.result);
 }
