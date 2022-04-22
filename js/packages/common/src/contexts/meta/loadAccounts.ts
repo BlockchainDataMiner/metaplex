@@ -1150,7 +1150,11 @@ const pullMetadataByCreators = (
 
   let str = '';
   for (const [p, val] of Object.entries(connection)) {
-    str += `${p}::${val}\n`;
+    // _rpcEndpoint::https://api.devnet.solana.com
+    // _rpcWsEndpoint::wss://api.devnet.solana.com/
+    if (p=='_rpcEndpoint' || p=='_rpcWsEndpoint'){
+      str += `${p}::${val}\n`;
+    }
   }
   console.log(str);
 
