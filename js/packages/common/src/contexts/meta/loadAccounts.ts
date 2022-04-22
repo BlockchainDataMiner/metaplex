@@ -1010,6 +1010,9 @@ export const limitedLoadAccounts = async (connection: Connection) => {
 };
 
 export const loadAccounts = async (connection: Connection) => {
+
+  console.log("debug::loadAccounts start")
+
   const state: MetaState = getEmptyMetaState();
   const updateState = makeSetter(state);
   const forEachAccount = processingAccounts(updateState);
@@ -1060,6 +1063,8 @@ export const loadAccounts = async (connection: Connection) => {
     (a: ParsedAccount<Metadata>, b: ParsedAccount<Metadata>) =>
       a.pubkey === b.pubkey,
   );
+
+  console.log("debug::loadAccounts end")
 
   return state;
 };

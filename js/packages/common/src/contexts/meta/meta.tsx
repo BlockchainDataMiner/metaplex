@@ -216,7 +216,7 @@ export function MetaProvider({
 
     const nextState = await loadAccounts(connection);
 
-    console.log('------->Query finished 000');
+    console.log('------->debug::Query finished 000');
 
     setState(nextState);
     await updateMints(nextState.metadataByMint);
@@ -251,7 +251,7 @@ export function MetaProvider({
       if (USE_SPEED_RUN) {
         nextState = await limitedLoadAccounts(connection);
 
-        console.log('------->Query finished 001');
+        console.log('------->debug::Query finished 001');
 
         setState(nextState);
 
@@ -303,7 +303,7 @@ export function MetaProvider({
         ? await loadAccounts(connection)
         : await limitedLoadAccounts(connection);
 
-      console.log('------->Query finished 002');
+      console.log('------->debug::Query finished 002');
 
       setState(nextState);
 
