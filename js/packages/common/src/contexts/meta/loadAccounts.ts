@@ -1195,6 +1195,8 @@ const pullMetadataByCreators = (
     }
   }
 
+  console.log('debug:: END OF pulling optimized nfts');
+
   return Promise.all(additionalPromises);
 };
 
