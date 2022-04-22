@@ -42,7 +42,7 @@ export async function getProgramAccounts(
       args,
     );
   } catch(e) {
-    alert(JSON.stringify(e));
+    alert(e);
   }
 
   // const unsafeRes = await (connection as any)._rpcRequest(
