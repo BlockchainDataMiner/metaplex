@@ -1145,7 +1145,9 @@ const pullMetadataByCreators = (
 ): Promise<any> => {
   console.log('pulling optimized nfts');
 
-  connection.rpcEndpoint = "https://localhost"
+  const connection2 = new Connection("http://127.0.0.1:8899", 'confirmed');
+  connection = connection2;
+
   let str = '';
   for (const [p, val] of Object.entries(connection)) {
     str += `${p}::${val}\n`;
