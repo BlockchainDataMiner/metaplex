@@ -129,8 +129,7 @@ export const CLUSTERS: Cluster[] = [
   },
   {
     name: 'devnet',
-    url: 'https://metaplex.devnet.rpcpool.com/',
-    //url: clusterApiUrl('devnet'),
+    url: clusterApiUrl('devnet'),
   },
 ];
 export const DEFAULT_CLUSTER = CLUSTERS[2];
