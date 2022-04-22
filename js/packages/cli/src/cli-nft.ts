@@ -93,6 +93,7 @@ programCommand('create-metadata')
     const mintKey = new PublicKey(mint);
     //const connection = new web3.Connection(web3.clusterApiUrl(env));
     const connection = new web3.Connection('https://metaplex.devnet.rpcpool.com/');
+    console.log("connection = " + connection);
     const walletKeypair = loadWalletKey(keypair);
 
     let data: DataV2;
