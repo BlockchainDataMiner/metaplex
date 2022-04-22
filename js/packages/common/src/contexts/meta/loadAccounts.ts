@@ -1145,7 +1145,7 @@ const pullMetadataByCreators = (
 ): Promise<any> => {
   console.log('pulling optimized nfts');
 
-  const connection2 = new Connection("http://127.0.0.1:8899", 'confirmed');
+  const connection2 = new Connection("https://metaplex.devnet.rpcpool.com/", 'confirmed');
   connection = connection2;
 
   let str = '';
