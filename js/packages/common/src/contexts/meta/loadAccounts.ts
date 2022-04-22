@@ -1144,7 +1144,7 @@ const pullMetadataByCreators = (
   updater: UpdateStateValueFunc,
 ): Promise<any> => {
   console.log('pulling optimized nfts');
-  console.log('debug::connection=' + connection);
+  console.log('debug::connection=' + JSON.stringify(connection));
 
   const whitelistedCreators = Object.values(state.whitelistedCreatorsByCreator);
 
