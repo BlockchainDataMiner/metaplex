@@ -1022,6 +1022,8 @@ export const loadAccounts = async (connection: Connection) => {
   const updateState = makeSetter(state);
   const forEachAccount = processingAccounts(updateState);
 
+  console.log("debug::loadAccounts 001")
+
   const forEach =
     (fn: ProcessAccountsFunc) => async (accounts: AccountAndPubkey[]) => {
       for (const account of accounts) {
@@ -1029,18 +1031,29 @@ export const loadAccounts = async (connection: Connection) => {
       }
     };
 
+  console.log("debug::loadAccounts 002")
+
   const loadVaults = () =>
     getProgramAccounts(connection, VAULT_ID).then(
       forEachAccount(processVaultData),
     );
+
+  console.log("debug::loadAccounts 003")
+
   const loadAuctions = () =>
     getProgramAccounts(connection, AUCTION_ID).then(
       forEachAccount(processAuctions),
     );
+
+  console.log("debug::loadAccounts 004")
+
   const loadMetaplex = () =>
     getProgramAccounts(connection, METAPLEX_ID).then(
       forEachAccount(processMetaplexAccounts),
     );
+
+  console.log("debug::loadAccounts 005")
+
   const loadCreators = () =>
     getProgramAccounts(connection, METAPLEX_ID, {
       filters: [
@@ -1049,10 +1062,18 @@ export const loadAccounts = async (connection: Connection) => {
         },
       ],
     }).then(forEach(processMetaplexAccounts));
+
+  console.log("debug::loadAccounts 006")
+
   const loadMetadata = () =>
     pullMetadataByCreators(connection, state, updateState);
+
+  console.log("debug::loadAccounts 007")
+
   const loadEditions = () =>
     pullEditions(connection, updateState, state, state.metadata);
+
+  console.log("debug::loadAccounts 008")
 
   const loading = [
     loadCreators().then(loadMetadata).then(loadEditions),
@@ -1061,7 +1082,11 @@ export const loadAccounts = async (connection: Connection) => {
     loadMetaplex(),
   ];
 
+  console.log("debug::loadAccounts 009")
+
   await Promise.all(loading);
+
+  console.log("debug::loadAccounts 010")
 
   state.metadata = uniqWith(
     state.metadata,
