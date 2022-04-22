@@ -800,6 +800,9 @@ export const pullPage = async (
 };
 
 export const limitedLoadAccounts = async (connection: Connection) => {
+
+  console.log("debug::limitedLoadAccounts start");
+
   const tempCache: MetaState = getEmptyMetaState();
   const updateTemp = makeSetter(tempCache);
 
@@ -1005,6 +1008,8 @@ export const limitedLoadAccounts = async (connection: Connection) => {
   await Promise.all(promises);
 
   await postProcessMetadata(tempCache);
+
+  console.log("debug::limitedLoadAccounts end");
 
   return tempCache;
 };
