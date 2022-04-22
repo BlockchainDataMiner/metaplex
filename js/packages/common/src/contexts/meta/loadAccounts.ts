@@ -1087,6 +1087,8 @@ const pullEditions = async (
     setOf100MetadataEditionKeys = [];
   };
 
+  console.log('debug::Pulling editions for optimized metadata 002');
+
   const processEditions = (returnedAccounts: MultipleAccounts) => {
     for (let j = 0; j < returnedAccounts.array.length; j++) {
       processMetaData(
@@ -1098,6 +1100,8 @@ const pullEditions = async (
       );
     }
   };
+
+  console.log('debug::Pulling editions for optimized metadata 003');
 
   for (const metadata of metadataArr) {
     // let editionKey: StringPublicKey;
@@ -1125,11 +1129,17 @@ const pullEditions = async (
     }
   }
 
+  console.log('debug::Pulling editions for optimized metadata 004');
+
   if (setOf100MetadataEditionKeys.length >= 0) {
     loadBatch();
   }
 
+  console.log('debug::Pulling editions for optimized metadata 005');
+
   await Promise.all(editionPromises);
+
+  console.log('debug::Pulling editions for optimized metadata 006');
 
   console.log(
     'Edition size',
