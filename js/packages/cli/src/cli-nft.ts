@@ -91,8 +91,7 @@ programCommand('create-metadata')
   .action(async (directory, cmd) => {
     const { keypair, env, mint, uri, file, verifyCreators } = cmd.opts();
     const mintKey = new PublicKey(mint);
-    //const connection = new web3.Connection(web3.clusterApiUrl(env));
-    const connection = new web3.Connection('https://metaplex.devnet.rpcpool.com/');
+    const connection = new web3.Connection(web3.clusterApiUrl(env));
     console.log("connection = " + connection);
     const walletKeypair = loadWalletKey(keypair);
 
