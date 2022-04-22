@@ -7,6 +7,9 @@ export async function getProgramAccounts(
   programId: StringPublicKey,
   configOrCommitment?: any,
 ): Promise<Array<AccountAndPubkey>> {
+
+  console.log("debug::getProgramAccounts start")
+
   const extra: any = {};
   let commitment;
   //let encoding;
@@ -33,6 +36,8 @@ export async function getProgramAccounts(
     'getProgramAccounts',
     args,
   );
+
+  console.log("debug::getProgramAccounts end")
 
   return unsafeResAccounts(unsafeRes.result);
 }
