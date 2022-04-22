@@ -36,6 +36,7 @@ export const processMetaplexAccounts: ProcessAccountsFunc = async (
 
   if (!isMetaplexAccount(account)) return;
 
+  return;
   console.log("debug::processMetaplexAccounts start : " + pubkey);
 
   try {
