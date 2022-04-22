@@ -45,8 +45,8 @@ export const processMetaplexAccounts: ProcessAccountsFunc = async (
       isAuctionManagerV1Account(account) ||
       isAuctionManagerV2Account(account)
     ) {
-      console.log("debug::isAuctionManagerV1Account=" + isAuctionCacheV1Account(account));
-      console.log("debug::isAuctionManagerV2Account=" + isAuctionCacheV2Account(account));
+      console.log("debug::isAuctionManagerV1Account=" + isAuctionManagerV1Account(account));
+      console.log("debug::isAuctionManagerV2Account=" + isAuctionManagerV2Account(account));
 
       const storeKey = new PublicKey(account.data.slice(1, 33));
 
