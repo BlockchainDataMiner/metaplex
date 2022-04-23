@@ -1180,6 +1180,7 @@ const pullMetadataByCreators = (
 ): Promise<any> => {
   console.log('pulling optimized nfts');
 
+  //debug::RPC ENDPOINT FORCING ?
   // const connection2 = new Connection("https://api.devnet.solana.com", 'confirmed');
   // connection = connection2;
 

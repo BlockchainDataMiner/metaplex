@@ -1,1 +1,5 @@
 
+genesys rpc endpoint devnet
+https://psytrbhymqlkfrhudd.dev.genesysgo.net:8899/
+
+
