@@ -38,6 +38,8 @@ const MetaContext = React.createContext<MetaContextState>({
   update: () => [AuctionData, BidderMetadata, BidderPot],
 });
 
+import { Connection, PublicKey } from '@solana/web3.js'; // debug::importer connection
+
 export function MetaProvider({
   children = null,
 }: {
