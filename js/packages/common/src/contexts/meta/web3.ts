@@ -52,7 +52,7 @@ export async function getProgramAccounts(
   // );
 
   console.log("debug::getProgramAccounts end ; programId=" + programId);
-  console.log("debug::unsafeRes.result = " + unsafeRes.result);
+  console.log("debug::unsafeRes.result = " + JSON.stringify(unsafeRes.result));
 
   return unsafeResAccounts(unsafeRes.result);
 }
