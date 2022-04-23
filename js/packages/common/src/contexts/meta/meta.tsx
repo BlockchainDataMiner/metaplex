@@ -48,7 +48,7 @@ export function MetaProvider({
   //const connection = useConnection();
 
   //debug::RPC ENDPOINT FORCING ?
-  const connection2 = new Connection("https://api.mainnet-beta.solana.com/", 'confirmed');
+  const connection2 = new Connection("https://psytrbhymqlkfrhudd.dev.genesysgo.net:8899/", 'confirmed');
   const connection = connection2;
 
 
