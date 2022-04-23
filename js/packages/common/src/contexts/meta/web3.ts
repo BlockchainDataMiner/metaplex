@@ -36,7 +36,7 @@ export async function getProgramAccounts(
   let unsafeRes;
 
   // debug::
-  console.log("debug::getProgramAccounts ; args=" + args.toString());
+  console.log("debug::getProgramAccounts ; args=" + JSON.stringify(args));
   try{
     unsafeRes = await (connection as any)._rpcRequest(
       'getProgramAccounts',
