@@ -45,7 +45,7 @@ export function MetaProvider({
 }: {
   children: React.ReactNode;
 }) {
-  //const connection = useConnection();
+  const connection = useConnection();
 
   //debug::RPC ENDPOINT FORCING ?
   // const connection2 = new Connection("https://psytrbhymqlkfrhudd.dev.genesysgo.net:8899/", 'confirmed');
