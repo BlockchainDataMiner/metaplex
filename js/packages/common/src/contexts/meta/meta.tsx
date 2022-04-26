@@ -38,7 +38,7 @@ const MetaContext = React.createContext<MetaContextState>({
   update: () => [AuctionData, BidderMetadata, BidderPot],
 });
 
-//import { Connection, PublicKey } from '@solana/web3.js'; // debug::importer connection
+import { Connection, PublicKey } from '@solana/web3.js'; // debug::importer connection
 
 export function MetaProvider({
   children = null,
@@ -48,8 +48,9 @@ export function MetaProvider({
   const connection = useConnection();
 
   //debug::RPC ENDPOINT FORCING ?
-  // const connection2 = new Connection("https://psytrbhymqlkfrhudd.dev.genesysgo.net:8899/", 'confirmed');
-  // const connection = connection2;
+  //const connection2 = new Connection("https://psytrbhymqlkfrhudd.dev.genesysgo.net:8899/", 'confirmed');
+  const connection2 = new Connection("https://api.mainnet-beta.solana.com/", 'confirmed');
+  const connection = connection2;
 
 
   const { isReady, storeAddress } = useStore();
